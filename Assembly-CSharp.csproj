@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EE2D166C-313C-C3F7-8DC2-413854C1837F}</ProjectGuid>
+    <ProjectGuid>{B4E31585-58DA-AC7E-A7CD-8E23C38F15AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\FinishLine.cs" />
+     <Compile Include="Assets\FollowPlayer.cs" />
      <Compile Include="Assets\LevelManager.cs" />
      <Compile Include="Assets\MoveBlock.cs" />
      <Compile Include="Assets\Pause.cs" />
@@ -68,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{2C159BEF-FFD8-AD7B-5D6B-7BFD5F0E8354}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{68E20866-7593-A9E9-EC48-2F96B8F40E0A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
