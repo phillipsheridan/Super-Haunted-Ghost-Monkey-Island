@@ -5,23 +5,24 @@ public class FollowPlayer : MonoBehaviour {
 
 
 
-	public Transform Player;
-	public float speed;
-	public bool followingPlayer;
+	private Transform target;
+	private Transform self;
+	public float moveSpeed = 3.0f;
+	public float rotationSpeed = 3.0f;
 	// Use this for initialization
-	void Start () {
-		this.followingPlayer = true;
+	void Awake () {
+		self = transform;
 
 
 	
 	}
-	
+	void Start () {
+		target = GameObject.FindWithTag ("Player").transform;
+	}
 	// Update is called once per frame
-	void FixedUpdate () {
-		if (followingPlayer) {
-			transform.position = Vector3.MoveTowards (transform.position, Player.position, speed);
-
-		}
+	void Update () {
+		self.rotation = Quaternion.Slerp (self.rotation, Quaternion.LookRotation (target.position - transform.position), rotationSpeed * Time.deltaTime);
+		self.position += self.forward * moveSpeed * Time.deltaTime;
 	
 	}
 }
