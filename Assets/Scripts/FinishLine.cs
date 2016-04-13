@@ -3,8 +3,12 @@ using System.Collections;
 
 public class FinishLine : MonoBehaviour {
 
-	private void OnColliderEnter(Collider other){
-		GameObject.Find("Player").SendMessage("Finish");
-		print ("Done");
+	private void OnTriggerEnter(Collider other){
+		if (other.gameObject.tag == "Water") {
+			GameObject.Find ("Player").SendMessage ("Finish");
+			print ("Done");
+			Application.LoadLevel("MainMenu");
+
+		}
 	}
 }
