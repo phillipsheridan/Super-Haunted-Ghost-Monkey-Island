@@ -21,8 +21,10 @@ public class FollowPlayer : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		self.rotation = Quaternion.Slerp (self.rotation, Quaternion.LookRotation (target.position - transform.position), rotationSpeed * Time.deltaTime);
-		self.position += self.forward * moveSpeed * Time.deltaTime;
-	
+		if (target.gameObject.transform.position.y <= 1.3) { 
+			self.rotation = Quaternion.Slerp (self.rotation, Quaternion.LookRotation (target.position - self.position), rotationSpeed * Time.deltaTime);
+			self.position += self.forward * moveSpeed * Time.deltaTime;
+
+		} 
 	}
 }
